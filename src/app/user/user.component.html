@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row vh-100 align-items-center">
+        <div class="col-xxl-6 offset-xxl-3 col-lg-8 offset-lg-2 col-10 offset-1">
+            <div class="row rounded-4 border-0 shadow-lg bg-white" style="min-height: 480px;">
+
+              <div class="col-md-5 d-md-flex flex-column d-none rounded-start-4 align-items-center justify-content-center" style="background-color: #f7f7f7;">
+
+                <img src="kiaanDigital.png" alt="" class="w-0 mb-3">
+                <p class="d-block  fw-bolder w-60 text-center">Where AI Meets Agile Development.</p>
+
+              </div>
+
+                <div class="col-md-7 col-12 d-flex justify-content-start align-items-center">
+                    <div class="p-5 w-100" [@routerFadeIn]="getRouteUrl()">
+                        <!-- <app-registration></app-registration> -->
+                         <router-outlet/>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

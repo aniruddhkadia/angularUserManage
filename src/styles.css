@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+     font-family: "Inter", sans-serif;
+}
+.error-feedback{
+  font-size: 9rem;
+  color: red;
+  margin: .3rem;
+  margin-top: 0.1rem;
+}
+.w-60{
+  width: 60%;
+}
