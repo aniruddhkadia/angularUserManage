@@ -57,3 +57,11 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+
+
+
+1. angular frontend project added on github using gitpages
+githug pages link: https://aniruddhkadia.github.io/angularUserManage/signin
+2. .netweb api backend project added on monster asp.net website
+monster asp.net website link: https://managementangular.runasp.net/swagger/index.html
