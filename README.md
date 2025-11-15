@@ -59,9 +59,36 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
 
 
-
-
 1. angular frontend project added on github using gitpages
 githug pages link: https://aniruddhkadia.github.io/angularUserManage/signin
 2. .netweb api backend project added on monster asp.net website
 monster asp.net website link: https://managementangular.runasp.net/swagger/index.html
+
+
+## Following steps need to add Angular project on gitHub using github pages.
+
+
+Step 1 => install github pages on the project folder
+
+ng add angular-cli-ghpages
+
+Step 2 => push code to githubRepo
+
+git status
+git add .
+git commit -m "initial angular project commit"
+git push
+
+
+Step 3 => got to repo setting and select branch and save
+
+Step 4 => build application using below cmd
+
+ng build --base-href "https://aniruddhkadia.github.io/angularUserManage/"
+
+Step 5 =>
+
+npx angular-cli-ghpages --dir=dist/auth-ecclient/browser
+
+==========================
+
