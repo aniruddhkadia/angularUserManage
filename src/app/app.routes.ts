@@ -6,15 +6,19 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { authGuard } from './shared/auth.guard';
 
 export const routes: Routes = [
-  { path: '', redirectTo: '/signin', pathMatch: 'full' },
+  { path: '', redirectTo: 'signin', pathMatch: 'full' },
   {
-    path: '', component: UserComponent,
+    path: '',
+    component: UserComponent,
     children: [
       { path: 'signup', component: RegistrationComponent },
       { path: 'signin', component: LoginComponent },
-    ]
+    ],
   },
-  { path: 'dashboard', component: DashboardComponent, 
-    canActivate:[authGuard] 
-  }
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    canActivate: [authGuard],
+  },
+  { path: '**', redirectTo: 'signin' }, // optional but recommended
 ];
