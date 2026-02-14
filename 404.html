@@ -7,7 +7,7 @@
       // Save the path that was requested
       var redirect = location.pathname.replace('/angularUserManage', '') + location.search + location.hash;
       if (redirect !== '/') {
-        sessionStorage.redirect = redirect;
+        sessionStorage.setItem('redirect', redirect);
       }
       // Redirect to index.html which will be served by GitHub Pages
       location.replace('/angularUserManage/');
