@@ -59,6 +59,7 @@
           },
           "configurations": {
             "production": {
+              "baseHref": "/angularUserManage/",
               "budgets": [
                 {
                   "type": "initial",
