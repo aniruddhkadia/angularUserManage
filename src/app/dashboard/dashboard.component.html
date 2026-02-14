@@ -1,13 +1,193 @@
-<div class="text-center">
-  <h1 class="display-6">Welcome!</h1>
-  <h1 class="display-6 fw-bolder text-dark">{{fullName}}</h1>
-  <div class="btn btn-dark" (click)="onLogout()">Logout</div>
-</div>
+<div class="dashboard-container">
+  <!-- Mobile Menu Trigger -->
+  <button class="mobile-toggle" (click)="toggleSidebar()">
+    <i class="pi pi-bars"></i>
+  </button>
 
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.show]="isSidebarVisible">
+    <div class="sidebar-brand">
+      <div class="brand-icon">
+        <i class="pi pi-bolt"></i>
+      </div>
+      <span class="brand-name">Nexus Admin</span>
+    </div>
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-6">left menu</div>
-    <div class="col-md-6">right content</div>
-  </div>
+    <nav class="sidebar-menu">
+      <a class="menu-item active">
+        <i class="pi pi-th-large"></i>
+        <span>Dashboard</span>
+      </a>
+      <a class="menu-item">
+        <i class="pi pi-users"></i>
+        <span>Users</span>
+      </a>
+      <a class="menu-item">
+        <i class="pi pi-chart-line"></i>
+        <span>Reports</span>
+      </a>
+    </nav>
+
+    <div class="logout-menu">
+      <a class="menu-item">
+        <i class="pi pi-cog"></i>
+        <span>Settings</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-left">
+        <h1>Overview</h1>
+      </div>
+
+      <div class="header-right">
+        <div class="user-profile">
+          <div class="user-avatar">
+            {{ fullName | slice: 0 : 1 | uppercase }}
+          </div>
+          <div class="user-info">
+            <span class="user-name">Welcome, {{ fullName }}</span>
+          </div>
+        </div>
+        <button class="btn-logout" (click)="onLogout()">
+          <i class="pi pi-sign-out"></i> Logout
+        </button>
+      </div>
+    </header>
+
+    <!-- Page Content -->
+    <div class="content-body">
+      <!-- Stats Cards -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-details">
+            <p class="stat-label">Total Users</p>
+            <h3 class="stat-value">12,482</h3>
+            <span class="stat-trend trend-up">
+              <i class="pi pi-arrow-up"></i> 12% inc.
+            </span>
+          </div>
+          <div class="stat-icon icon-blue">
+            <i class="pi pi-users"></i>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-details">
+            <p class="stat-label">Revenue</p>
+            <h3 class="stat-value">$45,280</h3>
+            <span class="stat-trend trend-up">
+              <i class="pi pi-arrow-up"></i> 8.4% inc.
+            </span>
+          </div>
+          <div class="stat-icon icon-green">
+            <i class="pi pi-wallet"></i>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-details">
+            <p class="stat-label">Total Orders</p>
+            <h3 class="stat-value">1,540</h3>
+            <span class="stat-trend trend-down">
+              <i class="pi pi-arrow-down"></i> 3.2% dec.
+            </span>
+          </div>
+          <div class="stat-icon icon-purple">
+            <i class="pi pi-shopping-cart"></i>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-details">
+            <p class="stat-label">Growth</p>
+            <h3 class="stat-value">24.5%</h3>
+            <span class="stat-trend trend-up">
+              <i class="pi pi-arrow-up"></i> 4.1% inc.
+            </span>
+          </div>
+          <div class="stat-icon icon-orange">
+            <i class="pi pi-chart-bar"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Sections -->
+      <div class="sections-grid">
+        <!-- Sales Chart Section -->
+        <section class="content-card">
+          <div class="card-title">
+            <span>Sales Analytics</span>
+            <i class="pi pi-ellipsis-h" style="cursor: pointer"></i>
+          </div>
+          <div class="chart-container">
+            <div class="chart-bar" style="height: 40%"></div>
+            <div class="chart-bar" style="height: 60%"></div>
+            <div class="chart-bar" style="height: 45%"></div>
+            <div class="chart-bar" style="height: 80%"></div>
+            <div class="chart-bar" style="height: 55%"></div>
+            <div class="chart-bar" style="height: 90%"></div>
+            <div class="chart-bar" style="height: 75%"></div>
+            <div class="chart-bar" style="height: 65%"></div>
+            <div class="chart-bar" style="height: 85%"></div>
+            <div class="chart-bar" style="height: 70%"></div>
+            <div class="chart-bar" style="height: 95%"></div>
+            <div class="chart-bar" style="height: 60%"></div>
+          </div>
+        </section>
+
+        <!-- Recent Activity Section -->
+        <section class="content-card">
+          <div class="card-title">
+            <span>Recent Activity</span>
+          </div>
+          <div class="activity-list">
+            <div class="activity-item">
+              <div class="activity-point"></div>
+              <div class="activity-content">
+                <p class="activity-text">
+                  New user registered: <b>Alex Smith</b>
+                </p>
+                <span class="activity-time">2 minutes ago</span>
+              </div>
+            </div>
+            <div class="activity-item">
+              <div
+                class="activity-point"
+                style="background-color: #10b981"
+              ></div>
+              <div class="activity-content">
+                <p class="activity-text">Payment received: <b>$250.00</b></p>
+                <span class="activity-time">45 minutes ago</span>
+              </div>
+            </div>
+            <div class="activity-item">
+              <div
+                class="activity-point"
+                style="background-color: #f97316"
+              ></div>
+              <div class="activity-content">
+                <p class="activity-text">Order <b>#4582</b> was shipped</p>
+                <span class="activity-time">3 hours ago</span>
+              </div>
+            </div>
+            <div class="activity-item">
+              <div
+                class="activity-point"
+                style="background-color: #3b82f6"
+              ></div>
+              <div class="activity-content">
+                <p class="activity-text">Database backup completed</p>
+                <span class="activity-time">5 hours ago</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
 </div>
