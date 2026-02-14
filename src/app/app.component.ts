@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Router, RouterOutlet } from '@angular/router';
 import { UserComponent } from './user/user.component';
 
 @Component({
@@ -9,6 +9,17 @@ import { UserComponent } from './user/user.component';
   templateUrl: './app.component.html',
   styles: [],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'AuthECClient';
+
+  constructor(private router: Router) {}
+
+  ngOnInit(): void {
+    // Handle redirect from GitHub Pages 404.html
+    const redirect = sessionStorage.redirect;
+    if (redirect) {
+      delete sessionStorage.redirect;
+      this.router.navigate([redirect]);
+    }
+  }
 }
